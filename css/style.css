@@ -1,0 +1,20 @@
+.text-end {
+  line-height: 31px;
+}
+.delete {
+  line-height: 38px;
+}
+.delete i {
+  font-size: 20px;
+}
+.lets-play {
+  font-size: 12px;
+  height: 1.7rem;
+  line-height: 10px;
+}
+.play-area {
+  min-width: 280px;
+}
+.ten-second-info {
+  font-size: 0.8rem;
+}
