@@ -76,6 +76,7 @@ function forSetTimeOut() {
       playGameButton.disabled = false;
     }
   }
+  answer.value = "";
 }
 
 /**
@@ -104,6 +105,7 @@ const nextQuestion = () => {
   counter++;
   clearTimeout(timer);
   timer = setTimeout(forSetTimeOut, 10000);
+  answer.value = "";
 };
 
 /**
