@@ -131,7 +131,7 @@ const renderPlayerList = (pArray) => {
         <td>${player.name}</td>
         <td>${player.surname}</td>
         <td id="player-score"><b>${player.score}</b></td>
-        <td class="text-end"><button type="button" onclick="setPlayerNameSurname(event)" class="btn btn-primary lets-play">Let's Play</button></td>
+        <td class="text-end"><button type="button" onclick="setPlayerNameSurname(${player.id})" class="btn btn-primary lets-play">Let's Play</button></td>
         <td class="delete"><i onclick="deletePlayer(
           ${player.id}
         )" class="fa-solid fa-trash-can text-danger"></i></td>      
@@ -165,11 +165,9 @@ const saveGameResult = () => {
  * Let's play button onclick event
  */
 const setPlayerNameSurname = (event) => {
-  const playerNameSurnameInList =
-    event.target.parentElement.parentElement.firstChild.innerText +
-    " " +
-    event.target.parentElement.parentElement.firstChild.nextSibling.innerText;
-  playerName.innerHTML = playerNameSurnameInList;
+  playerListArray = getLocalStorage("playerList");
+  const player = playerListArray.find((player) => player.id === event);
+  playerName.innerHTML = `${player.name} ${player.surname}`;
 };
 
 /**
